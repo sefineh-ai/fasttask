@@ -1,0 +1,128 @@
+import { Task, Assignee } from '../types/task';
+import alexAvatar from '../assets/images/avatar_alex_chen_1792652271463.jpg';
+import sarahAvatar from '../assets/images/avatar_sarah_miller_1792652283925.jpg';
+
+export const TEAM_MEMBERS: Assignee[] = [
+  {
+    name: 'Alex Chen',
+    email: 'alex.chen@fasttask.dev',
+    avatarUrl: alexAvatar,
+    role: 'Backend Architect',
+  },
+  {
+    name: 'Sarah Miller',
+    email: 'sarah.miller@fasttask.dev',
+    avatarUrl: sarahAvatar,
+    role: 'Product Lead',
+  },
+  {
+    name: 'Devin Thorne',
+    email: 'devin.thorne@fasttask.dev',
+    avatarUrl: '',
+    role: 'Full-Stack Engineer',
+  },
+];
+
+export const INITIAL_TASKS: Task[] = [
+  {
+    id: 'TSK-101',
+    title: 'Migrate REST endpoints to FastAPI async routers',
+    description: 'Transition synchronous request handlers in the task service to async def route functions with SQLAlchemy 2.0 async sessions.',
+    status: 'in_progress',
+    priority: 'urgent',
+    dueDate: '2026-10-24',
+    tags: ['Backend', 'FastAPI', 'Performance'],
+    assignee: TEAM_MEMBERS[0],
+    subtasks: [
+      { id: 'sub-1', title: 'Audit current blocking I/O calls', completed: true },
+      { id: 'sub-2', title: 'Implement async session dependency injection', completed: true },
+      { id: 'sub-3', title: 'Write pytest-asyncio integration tests', completed: false },
+    ],
+    createdAt: '2026-10-18T09:30:00.000Z',
+    updatedAt: '2026-10-21T14:15:00.000Z',
+  },
+  {
+    id: 'TSK-102',
+    title: 'Design Pydantic V2 request & response schemas',
+    description: 'Construct strict Pydantic V2 models with Field validation, example values for Swagger docs, and custom validators for ISO 8601 timestamps.',
+    status: 'completed',
+    priority: 'high',
+    dueDate: '2026-10-22',
+    tags: ['FastAPI', 'Pydantic', 'OpenAPI'],
+    assignee: TEAM_MEMBERS[1],
+    subtasks: [
+      { id: 'sub-4', title: 'Define TaskCreate and TaskUpdate schemas', completed: true },
+      { id: 'sub-5', title: 'Configure JSON schema serialization aliases', completed: true },
+      { id: 'sub-6', title: 'Verify OpenAPI documentation generation', completed: true },
+    ],
+    createdAt: '2026-10-15T11:00:00.000Z',
+    updatedAt: '2026-10-20T16:45:00.000Z',
+  },
+  {
+    id: 'TSK-103',
+    title: 'Build React Kanban drag-and-drop workspace',
+    description: 'Create an accessible, fluid drag-and-drop task board with column counters, quick-add cards, and status transition animations.',
+    status: 'in_progress',
+    priority: 'high',
+    dueDate: '2026-10-26',
+    tags: ['React', 'Frontend', 'UX'],
+    assignee: TEAM_MEMBERS[0],
+    subtasks: [
+      { id: 'sub-7', title: 'Set up column layout with horizontal scroll containers', completed: true },
+      { id: 'sub-8', title: 'Implement optimistic UI updates on drop', completed: true },
+      { id: 'sub-9', title: 'Add keyboard navigation accessibility', completed: false },
+    ],
+    createdAt: '2026-10-19T08:00:00.000Z',
+    updatedAt: '2026-10-21T18:20:00.000Z',
+  },
+  {
+    id: 'TSK-104',
+    title: 'Implement interactive Swagger OpenAPI 3.1 explorer',
+    description: 'Embed an interactive OpenAPI console allowing developers to test GET/POST/PUT/PATCH/DELETE endpoints directly against the backend.',
+    status: 'in_review',
+    priority: 'medium',
+    dueDate: '2026-10-25',
+    tags: ['API', 'Documentation', 'Swagger'],
+    assignee: TEAM_MEMBERS[1],
+    subtasks: [
+      { id: 'sub-10', title: 'Expose /openapi.json endpoint', completed: true },
+      { id: 'sub-11', title: 'Create interactive request sandbox with parameter inputs', completed: true },
+      { id: 'sub-12', title: 'Generate live cURL and Python requests snippets', completed: true },
+    ],
+    createdAt: '2026-10-17T13:40:00.000Z',
+    updatedAt: '2026-10-21T10:00:00.000Z',
+  },
+  {
+    id: 'TSK-105',
+    title: 'Setup automated health check & task metrics endpoint',
+    description: 'Create GET /api/stats to compute completion rates, overdue backlog items, and velocity metrics with sub-millisecond response latency.',
+    status: 'completed',
+    priority: 'low',
+    dueDate: '2026-10-20',
+    tags: ['Backend', 'Monitoring', 'Analytics'],
+    assignee: TEAM_MEMBERS[0],
+    subtasks: [
+      { id: 'sub-13', title: 'Benchmark aggregation query execution time', completed: true },
+      { id: 'sub-14', title: 'Add Prometheus-compatible telemetry tags', completed: true },
+    ],
+    createdAt: '2026-10-14T10:15:00.000Z',
+    updatedAt: '2026-10-19T17:30:00.000Z',
+  },
+  {
+    id: 'TSK-106',
+    title: 'Write Python FastAPI production starter template',
+    description: 'Bundle modular Python FastAPI codebase with main.py, schemas, models, database session management, and Dockerfile ready for export.',
+    status: 'backlog',
+    priority: 'medium',
+    dueDate: '2026-10-30',
+    tags: ['Python', 'FastAPI', 'Architecture'],
+    assignee: TEAM_MEMBERS[1],
+    subtasks: [
+      { id: 'sub-15', title: 'Structure modular router directory', completed: false },
+      { id: 'sub-16', title: 'Include sample SQLite and PostgreSQL connection pools', completed: false },
+      { id: 'sub-17', title: 'Add README with uvicorn start commands', completed: false },
+    ],
+    createdAt: '2026-10-20T15:00:00.000Z',
+    updatedAt: '2026-10-20T15:00:00.000Z',
+  },
+];

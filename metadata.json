@@ -1,0 +1,8 @@
+{
+  "name": "FastTask: FastAPI & React Task Suite",
+  "description": "High-performance task management workspace powered by FastAPI architecture and modern React. Featuring Kanban board, interactive OpenAPI Swagger explorer, batch workflow, and Python code generator.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
